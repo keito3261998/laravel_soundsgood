@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('owner.welcome');
-});
+// Route::get('/', function () {
+//     return view('owner.welcome');
+// });
 
 Route::prefix('shops')->
   middleware('auth:owners')->group(function(){
@@ -50,10 +50,10 @@ Route::get('/dashboard', function () {
 // 書き方が違う？sec2-16準備
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
-
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    // Route::get('register', [RegisteredUserController::class, 'create'])
+    //             ->name('register');
+    //
+    // Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
